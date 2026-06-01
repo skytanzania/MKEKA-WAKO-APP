@@ -28,6 +28,17 @@
             </intent-filter>
         </activity>
 
+        <!-- Use fallback metadata to guarantee OS notifications work when closed -->
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_icon"
+            android:resource="@android:drawable/ic_dialog_info" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_color"
+            android:resource="@color/purple_500" />
+        <meta-data
+            android:name="com.google.firebase.messaging.default_notification_channel_id"
+            android:value="mikeka_notifications" />
+
         <service
             android:name=".notifications.MyFirebaseMessagingService"
             android:exported="false">
